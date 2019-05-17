@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container-fluid p-4">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span id="submit-spath" class="input-group-text">Buscar separación</span>
+      </div>
+      <input id="src" name="source" type="text" aria-label="First actor" class="form-control">
+      <input id="tar" name="target" type="text" aria-label="Second actor" class="form-control">
+    </div>
+  </div>
+  <div align="center" id="content">
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script src= "{{ url_for('static', filename='js/graph_handle.js') }}"></script>
+<script src= "{{ url_for('static', filename='js/controls.js') }}"></script>
+{% endblock %}

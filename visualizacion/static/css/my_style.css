@@ -1,0 +1,95 @@
+#content {
+    margin: auto;
+    display: block;
+    margin-bottom: 25px;
+}
+
+#controls{
+    overflow: auto;
+    margin:auto;
+    margin-top: 20px;
+    width: 45%;
+    height: 250px;
+    min-width: 500px;
+    display: block;
+    border: 2px rgb(100, 100, 100) solid;
+    border-radius: 5px 5px 0px 0px;
+    background-color: rgb(100, 100, 100);
+}
+
+#controller {
+    display: inline-block;
+    margin: 10px 0px 10px 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.container{
+    background-color: rgba(255,255,255,0.5);
+    display: table-cell;
+    margin-left: 10px;
+    padding:5px;
+}
+
+.value {
+    width: 50px;
+    font-weight:bold;
+    border:0;
+}
+
+.selectors {
+    margin-top:0;
+    display: inline-block;
+}
+
+.nodes {
+    position: relative;
+    color: white;
+    padding: 5px;
+    background-color: rgba(10,10,200,0.8);
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 20px auto auto auto;
+    display: table;
+}
+
+input.form-control {
+    min-width: 100px !important;
+}
+
+svg.main {
+    height: 1200px;
+    width: 95%;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    font: 16px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+circle {
+    stroke: lightgray;
+}
+
+circle.main {
+    stroke: black;
+}
+
+line {
+  stroke: gray;
+}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block onload %}
+
+{% if actor %}
+    onload='main("/actor?actor={{ actor }}")'
+{% else %}
+    onload='main("/actor")'
+{% endif %}
+
+{% endblock %}
+
+{% block subtitle %}
+    <h3 id="act-name">Subgrafo</h3>
+    <div align="center" style="width: 100%;">
+        <input id="new-actor" class="form-control" style="width: auto" placeholder="Selecciona nuevo actor"></input>
+    </div>
+ {% endblock %}
+
+{% block content %}
+<div align="center" style="margin:auto;">
+    <div class="selectors">
+        <p >Tamaño</p>
+        <select id="size-select">
+            <option value="no"> Radio </option>
+            <option value="betweenness"> Betweenness </option>
+            <option value="closeness"> Closeness </option>
+        </select>
+    </div>
+    <div class="selectors">
+        <p>Color</p>
+        <select id="color-select">
+            <option value="no"> No </option>
+            <option value="comm"> Comunidad </option>
+        </select>
+    </div>
+    <div class="selectors">
+        <p>Aristas</p>
+        <select id="link-select">
+            <option value="no"> Normal </option>
+            <option value="weight"> Peso </option>
+            <option value="eb"> Edge Betweenness </option>
+        </select>
+    </div>
+</div>
+<div id="controls">
+    <div align="center" id="controller">
+      <h6 align="center"> Center </h6>
+        <div class="container">
+            <p>
+                <label for="value">x</label><br>
+                <input type="text" class="value" id="center-x" readonly>
+            </p>
+            <div id="center-x" min="0" max="1" step=".1" val="0.5" class="sliders" ></div>
+        </div>
+        <div class="container">
+            <p>
+                <label for="value">y</label><br>
+                <input type="text" class="value" id="center-y" readonly>
+            </p>
+            <div id="center-y" min="0" max=1 step="0.1" val="0.5"  class="sliders" ></div>
+        </div>
+    </div>
+    <div align="center" id="controller">
+      <h6 align="center"> Charge </h6>
+        <div class="container">
+            <p>
+                <label for="value">Strength</label><br>
+                <input type="text" class="value" id="charge-str" readonly>
+            </p>
+            <div id="charge-st" min="-200" max="50" step="1" val="-120" class="sliders" ></div>
+        </div>
+        <div class="container">
+            <p>
+                <label for="value">Min</label><br>
+                <input type="text" class="value" id="charge-min" readonly>
+            </p>
+            <div id="charge-min" min="0" max="2000" step="5" val="300"  class="sliders" ></div>
+        </div>
+        <div class="container">
+            <p>
+                <label for="value">Max</label><br>
+                <input type="text" class="value" id="charge-max" readonly>
+            </p>
+            <div id="charge-max" min="0" max="2000" step="5" val="1200"  class="sliders" ></div>
+        </div>
+    </div>
+    <div align="center" id="controller">
+      <h6 align="center"> Collide </h6>
+        <div class="container">
+            <p>
+                <label for="value">Strength</label><br>
+                <input type="text" class="value" id="coll-str" readonly>
+            </p>
+            <div id="coll-st" min="0" max="1" step="0.1" val="0.7" class="sliders" ></div>
+        </div>
+        <div class="container">
+            <p>
+                <label for="value">Radius</label><br>
+                <input type="text" class="value" id="coll-r" readonly>
+            </p>
+            <div id="coll-r" min="0" max="50" step="1" val="8"  class="sliders" ></div>
+        </div>
+        <div class="container">
+            <p>
+                <label for="value">Iterations</label><br>
+                <input type="text" class="value" id="coll-i" readonly>
+            </p>
+            <div id="coll-i" min="0" max="10" step="1" val="1" class="sliders" ></div>
+        </div>
+    </div>
+</div>
+<svg class="main" id="content">
+</svg>
+{% block scripts %}
+    <script src= "{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src= "{{ url_for('static', filename='js/subgraph_handle.js') }}"></script>
+    <script src= "{{ url_for('static', filename='js/controls.js') }}"></script>
+{% endblock %}
+
+{% endblock %}
