@@ -3,7 +3,6 @@
 
 
 ##### AUTORES:
-- César Arribas Muñoz
 - Roberto Nombela Alonso
 
 ##### PREPARACIÓN DEL ENTORNO:
